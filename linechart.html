@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="style1.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  <div id="mydiv">
+      <div class="sidebar" id="side">
+        <img src="list.png" height="30px" width="30px" alt="" id="icon">
+          <h3 id="title" class="text-center alert-success">Dashboard</h3>
+          <ul>
+            <li><a href="barchart.html">BarChart</a></li>
+            <li><a href="piechart.html">PieChart</a></li>  
+            <li><a href="donutchart.html">DonutChart</a></li>  
+            <li><a href="linechart.html">LineChart</a></li>  
+            <li><a href="treeplot.html">TreeMap</a></li> 
+            <li><a href="histogram.html">Histogram</a></li>   
+          </ul>
+      </div>
+
+    <section class="main">
+      <div id="forlinechart" class="shadow p-5">
+      </div>
+      <div id="fordesc">
+       <h2>Description:</h2>
+       <p>This is a Line chart shows that the overall trend or we can say popularity of 
+          different songs day-wise. So we can easily find that which song has been going most
+          popular day by day.</p>
+      </div>
+    </section>  
+  </div>
+
+  <script>
+    jQuery.noConflict(); 
+    jQuery(document).ready(function ($) {
+        $('#icon').click(function () {
+            $('.sidebar').toggle("togglesidebar")
+        });
+    });
+
+   //Code for LineChart:
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day-wise');
+      data.addColumn('number', 'Hip-Hop');
+      data.addColumn('number', 'Rock');
+      data.addColumn('number', 'Classical');
+      data.addColumn('number', 'Pop');
+      data.addColumn('number', 'Metal');
+
+      data.addRows([
+        [1,  37.8, 80.8, 41.8, 50, 34],
+        [2,  30.9, 69.5, 32.4, 54, 23],
+        [3,  25.4,   57, 25.7, 30, 33],
+        [4,  11.7, 18.8, 10.5, 20, 24],
+        [5,  11.9, 17.6, 10.4, 15, 31],
+        [6,   8.8, 13.6,  7.7, 9, 14],
+        [7,   7.6, 12.3,  9.6, 10, 19],
+        [8,  12.3, 29.2, 10.6, 28, 30],
+        [9,  16.9, 42.9, 14.8, 30, 40],
+        [10, 12.8, 30.9, 11.6, 20, 40],
+        [11,  5.3,  7.9,  4.7, 7, 32],
+        [12,  6.6,  8.4,  5.2, 9, 28],
+        [13,  4.8,  6.3,  3.6, 17, 24],
+        [14,  4.2,  6.2,  3.4, 19, 20]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Day-wise popularity of different musics',
+        },
+        legend: { position: 'top', textStyle: {fontSize: 15} },  
+        width: 600,
+        height: 400
+      };
+
+      var chart = new google.charts.Line(document.getElementById('forlinechart'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

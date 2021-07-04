@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Chart</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+ <div id="mydiv">
+    <div class="sidebar" id="side">
+      <img src="list.png" height="30px" width="30px" alt="" id="icon">
+        <h3 id="title" class="text-center alert-success">Dashboard</h3>
+        <ul>
+          <li><a href="barchart.html">BarChart</a></li>
+          <li><a href="piechart.html">PieChart</a></li>  
+          <li><a href="donutchart.html">DonutChart</a></li>  
+          <li><a href="linechart.html">LineChart</a></li>  
+          <li><a href="treeplot.html">TreeMap</a></li> 
+          <li><a href="histogram.html">Histogram</a></li>   
+        </ul>
+    </div>
+
+  <section class="main">
+    <div id="fordonutchart" class="shadow p-5"></div>
+    <div id="fordesc">
+     <h2>Description:</h2>
+     <p>This is a Donut Chart show that the overall review of all apps out of 5.
+      So we can easily find that which app has highest review and which app has 
+      lowest review.</p>
+    </div>
+  </section>  
+</div>
+
+ <script>
+  jQuery.noConflict(); 
+  jQuery(document).ready(function ($) {
+      $('#icon').click(function () {
+          $('.sidebar').toggle("togglesidebar")
+      });
+  });
+
+    //Code for DonutChart:
+    google.charts.load("current", {packages:["corechart"]});
+       google.charts.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+           ['MusicApps', 'Overall Ratings out 5'],
+           ['NetEase', 4.7],
+           ['Spotify', 4.2],
+           ['Gaana', 3.5],
+           ['JioSaavn', 3.0]
+        ]);
+
+         var options = {
+           title: 'Overall MusicApp Ratings',
+           pieHole: 0.4,
+           legend: { position: 'right', textStyle: {fontSize: 17} }, 
+           width: 600,
+           height: 400
+        };
+
+         var chart = new google.visualization.PieChart(document.getElementById('fordonutchart'));
+         chart.draw(data, options);
+      }
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 
+</body>
+</html>

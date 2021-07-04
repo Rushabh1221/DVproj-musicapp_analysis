@@ -1,0 +1,153 @@
+/*For Common CSS*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mydiv{ 
+    width: 100%;
+    float: left;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: relative; 
+    
+}
+
+.mgl{
+    
+    margin-left: 190px;
+}
+
+.main h1{
+    position: absolute;
+    top: 50%;
+    color: honeydew;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-size: x-large;
+}
+
+/*CSS for Sidebar*/
+#title{
+    font-size: 30px;
+    color:rgb(109, 105, 105);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+}
+.sidebar{
+    height: 100vh;
+    width: 250px;
+    background-color: rgb(35, 37, 39);
+    position: fixed;
+    z-index: 999;
+    padding: 5px;
+    left: -250;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.togglesidebar{
+    left: 0;
+}
+
+.sidebar ul{
+    display: block;
+    margin: 50px;
+}
+
+.sidebar ul li{
+    padding: 10px 0;
+    list-style: none;
+    border-bottom: 1px solid;
+}
+
+.sidebar ul li a{
+    color: honeydew;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#icon{
+    position: absolute;
+    right: -30px;
+    top: 0;
+    cursor: pointer;
+}
+
+/*For div element*/
+#forbarchart{
+    margin-top: 0px;
+    margin-left: 370px;
+    margin-right: 200px;
+    height: 500;
+    width: 900; 
+}
+
+#fordesc{
+    margin-left: 300px;
+    margin-top: 20px;
+    
+}
+h2{
+    color: rgb(0, 0, 0);
+}
+p{
+    color: black;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align-last: auto;
+}    
+
+/*For PieChart*/
+#forpiechart{
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 200px;
+    height: 350;
+    width: 350; 
+}
+
+/*For Histogram*/
+#forhistogram{
+    margin-top: 0px;
+    margin-left: 450px;
+    margin-right: 200px;
+    height: 400;
+    width: 600; 
+}
+
+/*For TreePlot*/
+#fortreeplot{
+    margin-top: 0px;
+    margin-left: 450px;
+    margin-right: 200px;
+    height: 700;
+    width: 700; 
+}
+
+/*For LineChart*/
+#forlinechart{
+    margin-top: 0px;
+    margin-left: 350px;
+    margin-right: 200px;
+    height: 400;
+    width: 600; 
+}
+
+/*For DonutChart*/
+#fordonutchart{
+    margin-top: 0px;
+    margin-left: 450px;
+    margin-right: 200px;
+    height: 400;
+    width: 600; 
+}

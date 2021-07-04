@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  <div id="mydiv">
+      <div class="sidebar" id="side">
+        <img src="list.png" height="30px" width="30px" alt="" id="icon">
+          <h3 id="title" class="text-center alert-success">Dashboard</h3>
+          <ul>
+            <li><a href="barchart.html">BarChart</a></li>
+            <li><a href="piecharts.html">PieChart</a></li>  
+            <li><a href="donutchart.html">DonutChart</a></li>  
+            <li><a href="linechart.html">LineChart</a></li>  
+            <li><a href="treeplot.html">TreeMap</a></li> 
+            <li><a href="histogram.html">Histogram</a></li>   
+          </ul>
+      </div>
+
+    <section class="main">
+      <div id="forhistogram" class="shadow p-5"></div>
+      <div id="fordesc">
+       <h2>Description:</h2>
+       <p class="">This is a Histogram chart that shows the overall review of each category
+         and different musics. In which each bin contain number of songs as per their review. 
+        So we can easily find that in which range the most number of songs has been reviewed.</p>
+      </div>
+    </section>  
+  </div>
+
+  <script>
+    jQuery.noConflict(); 
+    jQuery(document).ready(function ($) {
+        $('#icon').click(function () {
+            $('.sidebar').toggle("togglesidebar")
+        });
+    });
+
+   //Code for Histogram:
+   google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Music', 'Rating'],
+          ['Get Low (Hip-Hop)', 4.3],
+          ['Rock with You (Rock)', 3.8],
+          ['Pump it (Metal)', 2.4],
+          ['Old Time (Rock)', 4.8],
+          ['Paper Planes (Hip-Hop)', 1.7],
+          ['Fun (Rock)', 4.7],
+          ['Hallowed (Metal)', 2.1],
+          ['Slow Down (Hip-Hop)', 2.5],
+          ['Ace of Spades (Metal)', 4.1],
+          ['Crazy Train (Metal)', 2.7],
+          ['Mozart (Classical)', 1],
+          ['Roll to me (Rock)', 2.7],
+          ['The Rain (Hip-Hop)', 2.1],
+          ['War Pigs (Metal)', 3.4],
+          ['Garnish (Rock)', 2.5],
+          ['Till Infinity (Hip-Hop)', 2.0],
+          ['Rock it (Rock)', 3.9],
+          ['Still Fun (Rock)', 1.2],
+          ['Puccini (Classical)', 4.6],
+          ['I Wanna Dance (Pop)', 1.5],
+          ['Vivaldi (Classical)', 2.9],
+          ['Its Gonna Be Me (Pop)', 2.0],
+          ['Thriller (Pop)', 4.7],
+          ['Paranoid (Metal)', 2.2],
+          ['Let Me Love You (Classical)', 0.9],
+          ['Beethoven (Classical)', 3.5]]);
+
+        var options = {
+          title: 'Ratings of Various Musics',
+          legend: { position: 'top' },
+       
+          colors: ['green'],
+          width: 600,
+          height: 400,
+        };
+
+        var chart = new google.visualization.Histogram(document.getElementById('forhistogram'));
+        chart.draw(data, options);
+      }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

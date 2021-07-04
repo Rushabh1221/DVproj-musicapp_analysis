@@ -1,0 +1,147 @@
+{
+    "data": {
+      "id": "Songs"
+    },
+    "children": [
+      {
+        "data": {
+          "id": "Classical"
+        },
+        "children": [
+          {
+            "data": {
+              "id": "Southern Asia"
+            }
+          },
+          {
+            "data": {
+              "id": "Western Asia"
+            }
+          },
+          {
+            "data": {
+              "id": "South-Eastern Asia"
+            }
+          },
+          {
+            "data": {
+              "id": "Eastern Asia"
+            }
+          },
+          {
+            "data": {
+              "id": "Central Asia"
+            }
+          }
+        ]
+      },
+      {
+        "data": {
+          "id": "Rock"
+        },
+        "children": [
+          {
+            "data": {
+              "id": "Southern Europe"
+            }
+          },
+          {
+            "data": {
+              "id": "Western Europe"
+            }
+          },
+          {
+            "data": {
+              "id": "Eastern Europe"
+            }
+          },
+          {
+            "data": {
+              "id": "Northern Europe"
+            }
+          }
+        ]
+      },
+      {
+        "data": {
+          "id": "Pop"
+        },
+        "children": [
+          {
+            "data": {
+              "id": "Northern Africa"
+            }
+          },
+          {
+            "data": {
+              "id": "Middle Africa"
+            }
+          },
+          {
+            "data": {
+              "id": "Western Africa"
+            }
+          },
+          {
+            "data": {
+              "id": "Southern Africa"
+            }
+          },
+          {
+            "data": {
+              "id": "Eastern Africa"
+            }
+          }
+        ]
+      },
+      {
+        "data": {
+          "id": "Hip Hop"
+        },
+        "children": [
+          {
+            "data": {
+              "id": "Polynesia"
+            }
+          },
+          {
+            "data": {
+              "id": "Australia and New Zealand"
+            }
+          },
+          {
+            "data": {
+              "id": "Melanesia"
+            }
+          },
+          {
+            "data": {
+              "id": "Micronesia"
+            }
+          }
+        ]
+      },
+      {
+        "data": {
+          "id": "Metal"
+        },
+        "children": [
+          {
+            "data": {
+              "id": "Caribbean"
+            }
+          },
+          {
+            "data": {
+              "id": "South America"
+            }
+          },
+          {
+            "data": {
+              "id": "Central America"
+            }
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="style1.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://unpkg.com/d3@6.5.0/dist/d3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      svg {
+          border: 1px solid;
+      }
+      rect {
+          fill: steelblue;
+          height: 45px;
+      }
+      text {
+          font-size: 1.5em;
+          font-family: sans-serif;
+      }
+      .txt {
+          font-size: 25px;
+      }
+  </style>
+</head>
+<body>
+  <div id="mydiv">
+      <div class="sidebar" id="side">
+        <img src="list.png" height="30px" width="30px" alt="" id="icon">
+          <h3 id="title" class="text-center alert-success">Dashboard</h3>
+          <ul>
+            <li><a href="barchart.html">BarChart</a></li>
+            <li><a href="piecharts.html">PieChart</a></li>  
+            <li><a href="donutchart.html">DonutChart</a></li>  
+            <li><a href="linechart.html">LineChart</a></li>  
+            <li><a href="treeplot.html">TreeMap</a></li> 
+            <li><a href="histogram.html">Histogram</a></li>   
+          </ul>
+      </div>
+
+    <section class="main">
+      <div id="forbarchart" class="shadow p-11">
+        <img src="barchart.jpeg" alt="mybarchart" width="850" height="500">
+      </div>
+      <div id="fordesc">
+       <h2>Description:</h2>
+       <p>This is a Bar chart shows that the comparison of different music apps
+        as per their number of users. By labeling we can see that the actual number of user of each app.
+        So we can easily find that which app has most and less number of users.</p>
+      </div>
+    </section>  
+  </div>
+
+  <script src="bar.js">
+    jQuery.noConflict(); 
+    jQuery(document).ready(function ($) {
+        $('#icon').click(function () {
+            $('.sidebar').toggle("togglesidebar")
+        });
+    });
+
+   //Code for BarChart:
+    /*google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["MusicApps", "No. of User", { role: "style" } ],
+          ["Spotify" ,1415046, "blue"],
+          ["Ganna" ,1354052, "green"],
+          ["JioSaavan" ,326767, "red"],
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: 'Number of Users per App',
+        bar: {groupWidth: "70%"},
+        legend: { position: "top" },
+       
+        height: 400,
+        width: 600,
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("forbarchart"));
+      chart.draw(view, options);
+  }
+*/  
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
